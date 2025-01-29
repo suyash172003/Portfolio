@@ -14,9 +14,9 @@ function Portfolio() {
     <div className='bg-black'>
       <Navbar/>
       <Landing/>
-      <Eyes/>
       <Skills/>
       <Projects/>
+      <Eyes/>
       <Education/>
       <ContactUS/>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import Github from '../assets/Github.png'
 import Instagram from '../assets/Instagram.png'
 import LinkedIn from '../assets/LinkedIn.png'
@@ -6,25 +7,29 @@ import Email from '../assets/Email.png'
 import Whatsapp from '../assets/Whatsapp.png'
 
 function ContactUS() {
+  const socialLinks = [
+    { href: 'https://www.linkedin.com/in/suyash-shukla-16ba9922a/', img: LinkedIn, alt: 'LinkedIn' },
+    { href: 'https://www.instagram.com/suyashshukla_/', img: Instagram, alt: 'Instagram' },
+    { href: 'https://github.com/suyashshukla_', img: Github, alt: 'Github' },
+    { href: 'https://wa.me/1234567890', img: Whatsapp, alt: 'Whatsapp' },
+    { href: 'mailto:suyashshukla@example.com', img: Email, alt: 'Email' }
+  ]
+
   return (
     <div className='bg-black min-h-screen w-full flex flex-col items-center justify-center p-10'>
-      <h1 className='text-8xl text-white uppercase font-extrabold mb-10'>Connect</h1>
+      <h1 className='text-8xl text-teal-400 uppercase font-extrabold mb-10'>Connect</h1>
       <div className='flex flex-wrap items-center justify-center gap-10'>
-        <button onClick={() => window.open('https://www.linkedin.com/in/suyash-shukla-16ba9922a/')} className='bg-blue-500 p-3 rounded-lg'>
-          <img src={LinkedIn} alt='LinkedIn' className='w-20 h-20'/>
-        </button>
-        <button onClick={() => window.open('https://www.instagram.com/suyashshukla_/')} className='bg-blue-500 p-3 rounded-lg'>
-          <img src={Instagram} alt='Instagram' className='w-20 h-20'/>   
-        </button>
-        <button onClick={() => window.open('https://github.com/suyashshukla_')} className='bg-blue-500 p-3 rounded-lg'>
-          <img src={Github} alt='Github' className='w-20 h-20'/>
-        </button>
-        <button onClick={() => window.open('https://wa.me/1234567890')} className='bg-blue-500 p-3 rounded-lg'>
-          <img src={Whatsapp} alt='Whatsapp' className='w-20 h-20'/>
-        </button>
-        <button onClick={() => window.open('mailto:suyashshukla@example.com')} className='bg-blue-500 p-3 rounded-lg'>
-          <img src={Email} alt='Email' className='w-20 h-20'/>
-        </button>
+        {socialLinks.map((link, index) => (
+          <motion.button
+            key={index}
+            onClick={() => window.open(link.href)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className='bg-gray-800 p-3 rounded-full shadow-lg'
+          >
+            <img src={link.img} alt={link.alt} className='w-20 h-20'/>
+          </motion.button>
+        ))}
       </div>
     </div>
   )
