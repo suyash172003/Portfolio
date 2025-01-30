@@ -24,7 +24,6 @@ function Skills() {
     { name: 'SpringBoot', image: SpringBoot },
     { name: 'Jenkins', image: Jenkins },
     { name: 'Git', image: Git },
-    { name: 'GitHub', image: GitHub },
     { name: 'Docker', image: Docker },
     { name: 'Kubernetes', image: Kubernetes },
     { name: 'Terraform', image: Terraform },
@@ -35,7 +34,7 @@ function Skills() {
   ];
 
   return (
-    <div className= 'bg-gray-400 text-white w-full h-50 flex items-center justify-center'>
+    <div className= 'bg-red-900 text-white w-full h-50 flex items-center justify-center'>
         
         <div className='overflow-hidden w-full p-10'>
             <motion.div 
@@ -46,7 +45,7 @@ function Skills() {
             >
                 {skills.concat(skills).map((skill, index) => (
                     <div key={index} className='inline-block text-center relative'>
-                        <div className='h-24 w-24 bg-white rounded-lg p-2 shadow-lg sparkle'>
+                        <div className='h-24 w-24 bg-black rounded-lg p-2 shadow-lg sparkle'>
                             <img src={skill.image} alt={skill.name} className='w-20 h-20 mx-auto mb-2'/>
                         </div>
                     </div>

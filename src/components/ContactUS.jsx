@@ -10,14 +10,14 @@ function ContactUS() {
   const socialLinks = [
     { href: 'https://www.linkedin.com/in/suyash-shukla-16ba9922a/', img: LinkedIn, alt: 'LinkedIn' },
     { href: 'https://www.instagram.com/suyashshukla_/', img: Instagram, alt: 'Instagram' },
-    { href: 'https://github.com/suyashshukla_', img: Github, alt: 'Github' },
+    { href: 'https://github.com/suyash172003', img: Github, alt: 'Github' },
     { href: 'https://wa.me/1234567890', img: Whatsapp, alt: 'Whatsapp' },
-    { href: 'mailto:suyashshukla@example.com', img: Email, alt: 'Email' }
+    { href: 'mailto:suyash172003@gmail.com', img: Email, alt: 'Email' }
   ]
 
   return (
     <div className='bg-black min-h-screen w-full flex flex-col items-center justify-center p-10'>
-      <h1 className='text-8xl text-teal-400 uppercase font-extrabold mb-10'>Connect</h1>
+      <h1 className='text-8xl text-white uppercase font-extrabold mb-10'>Connect</h1>
       <div className='flex flex-wrap items-center justify-center gap-10'>
         {socialLinks.map((link, index) => (
           <motion.button

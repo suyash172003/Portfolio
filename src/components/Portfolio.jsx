@@ -7,6 +7,8 @@ import Projects from './Projects'
 import ContactUS from './ContactUS'
 import Education from './Education'
 import Eyes from './Eyes'
+import About from './About'
+import {motion} from 'framer-motion'
 
 
 function Portfolio() {
@@ -14,10 +16,11 @@ function Portfolio() {
     <div className='bg-black'>
       <Navbar/>
       <Landing/>
-      <Skills/>
+      <About/>
+      <Education/>
       <Projects/>
       <Eyes/>
-      <Education/>
+      <Skills/>
       <ContactUS/>
     </div>
   )

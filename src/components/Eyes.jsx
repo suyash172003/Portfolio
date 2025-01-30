@@ -40,20 +40,22 @@ function Eyes() {
 
   return (
     <div className='h-screen w-full bg-black flex flex-row justify-center items-center p-10 relative'>
-      <div className='eye left-eye border-2 h-30 w-30 rounded-full bg-white flex justify-center items-center m-5'>
-        <motion.div
-          className='pupil h-10 w-10 bg-black rounded-full'
-          animate={{ x: eyePosition.left.x, y: eyePosition.left.y }}
-          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-        />
-      </div>
-      <div className='eye right-eye border-2 h-30 w-30 rounded-full bg-white flex justify-center items-center m-5'>
-        <motion.div
-          className='pupil h-10 w-10 bg-black rounded-full'
-          animate={{ x: eyePosition.right.x, y: eyePosition.right.y }}
-          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-        />
-      </div>
+      
+        <div className='eye left-eye border-2 h-30 w-30 rounded-full bg-white flex justify-center items-center m-5'>
+          <motion.div
+            className='pupil h-10 w-10 bg-black rounded-full'
+            animate={{ x: eyePosition.left.x, y: eyePosition.left.y }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          />
+        </div>
+        <div className='eye right-eye border-2 h-30 w-30 rounded-full bg-white flex justify-center items-center m-5'>
+          <motion.div
+            className='pupil h-10 w-10 bg-black rounded-full'
+            animate={{ x: eyePosition.right.x, y: eyePosition.right.y }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          />
+        </div>
+        
     </div>
   )
 }
