@@ -16,7 +16,7 @@ import Python from '../assets/Python.png'
 import Cpp from '../assets/C++.png'
 import '../styles.css'
 
-function Skills() {
+const Skills = React.forwardRef((props,ref) => {
   const skills = [
     { name: 'HTML', image: HTML },
     { name: 'CSS', image: CSS },
@@ -34,8 +34,8 @@ function Skills() {
   ];
 
   return (
-    <div className= 'bg-red-900 text-white w-full h-50 flex items-center justify-center'>
-        
+    <div className= 'bg-black text-white w-full h-screen flex flex-col items-center justify-center'>
+        <h1 className="text-8xl text-white font-bold uppercase">Skills</h1>
         <div className='overflow-hidden w-full p-10'>
             <motion.div 
                 className='flex gap-10 p-10 whitespace-nowrap'
@@ -54,6 +54,6 @@ function Skills() {
         </div>
     </div>
   )
-}
+})
 
 export default Skills

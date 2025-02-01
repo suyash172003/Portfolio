@@ -6,7 +6,7 @@ import ApniDukkan from '../assets/ApniDukkan.png'
 import Woofer from '../assets/Woofer.png'
 import WebChat from '../assets/WebChat.png'
 
-function Projects() {
+const Projects = React.forwardRef((props,ref) => {
   const projects = [
     {
       title: 'APNI DUKKAN',
@@ -29,7 +29,7 @@ function Projects() {
   ];
 
   return (
-    <div className='text-white bg-red-900 w-full min-h-screen flex flex-col items-center justify-center gap-10 p-10'>
+    <div ref={ref} className='text-white bg-red-900 w-full min-h-screen flex flex-col items-center justify-center gap-10 p-10'>
       <div className='text-8xl mb-10 uppercase font-bold'>Projects</div>
       <div className='w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
         {projects.map((project, index) => {
@@ -69,5 +69,5 @@ function Projects() {
     </div>
   )
 }
-
+)
 export default Projects

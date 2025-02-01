@@ -3,12 +3,11 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 function Education() {
-  const Education = "Education".split('')
   const educationData = [
     {
       title: 'B.Tech in Computer Science and Engineering',
       institution: 'Inderprastha Engineering College',
-      year: '2019 - 2023',
+      year: '2020 - 2024',
       side: 'left'
     },
     {
@@ -26,8 +25,7 @@ function Education() {
   ];
 
   return (
-    <div className='bg-black h-screen w-full flex flex-row items-center justify-center'>
-      
+    <div className='bg-black min-h-screen w-full flex flex-col items-center p-10'>
       <div className='relative w-full max-w-4xl'>
         <motion.div
           className='absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-600'
@@ -56,12 +54,12 @@ function Education() {
               transition={{ duration: 0.5, delay: index * 0.3 }}
               className={`mb-10 flex ${edu.side === 'left' ? 'justify-start' : 'justify-end'} w-full`}
             >
-              <div className={`relative text-white p-6 rounded-lg shadow-lg w-1/2 ${edu.side === 'left' ? 'text-left' : 'text-right'}`}>
+              <div className={`relative text-white p-6 rounded-lg shadow-lg w-full md:w-1/2 ${edu.side === 'left' ? 'text-left' : 'text-right'}`}>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.3 }}
-                  className={`absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-red-900 rounded-full border-2 border-gray-900 ${edu.side === 'left' ? '-right-2' : '-left-2'}`}
+                  className={`absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900 ${edu.side === 'left' ? '-right-2' : '-left-2'}`}
                 ></motion.div>
                 <div className='text-2xl font-light mb-1'>{edu.title}</div>
                 <div className='text-xl mb-1'>{edu.institution}</div>
@@ -71,7 +69,6 @@ function Education() {
           )
         })}
       </div>
-      
     </div>
   )
 }

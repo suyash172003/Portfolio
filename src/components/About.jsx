@@ -1,21 +1,27 @@
 import React from 'react'
+import TypeWriter from 'typewriter-effect'
 
-function About() {
+const About = React.forwardRef((props,ref) => {
   const About = "About".split('')
   return (
-    <div className='h-screen w-full flex flex-row p-10 mb-10 gap-50'>
-        <div className="bg-red-900 h-full w-64 rounded-b-3xl rounded-t-3xl">
-            <div className="text-8xl text-black font-bold uppercase flex flex-col justify-center items-center h-full">
+    <div ref={ref} className='h-screen w-full flex flex-row p-10 mb-10 gap-50 bg-red-900 text-white '>
+        <div className="h-full w-64 rounded-b-3xl rounded-t-3xl bg-black">
+            <div className="text-8xl text-red-900 font-bold uppercase flex flex-col justify-center items-center h-full">
                 {About.map((char, index) => (<h1 key={index}>{char}</h1>))}
             </div>
         </div>
-        <p className='text-white font-light flex items-center justify-center mb-10 md:mb-0' > 
-            I am a passionate individual who has keen interest in learning new technologies throughout my journey<br/>
-            I had cultivated my skills and interest in making real world projects. I am a quick learner and<br/>
-            always ready to take up new challenges. I have a good understanding of Data Structures and Algorithms.
-        </p>
+        <div className='text-white text-3xl font-light flex items-center justify-center md:w-2/3'>
+          
+            <TypeWriter options={{
+               strings: ['I am a Full Stack Developer with a passion for creating beautiful and functional websites,I have experience in building web applications using React, Node.js, and Express.js,I am always eager to learn new technologies and improve my skills. I am currently looking for new opportunities to work on exciting projects.'],
+                autoStart: true,
+                loop: true,
+               }}>
+            </TypeWriter>
+          
+      </div>
     </div>
   )
-}
+})
 
 export default About

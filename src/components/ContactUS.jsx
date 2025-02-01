@@ -6,7 +6,7 @@ import LinkedIn from '../assets/LinkedIn.png'
 import Email from '../assets/Email.png'
 import Whatsapp from '../assets/Whatsapp.png'
 
-function ContactUS() {
+const ContactUS = React.forwardRef((props,ref)=> {
   const socialLinks = [
     { href: 'https://www.linkedin.com/in/suyash-shukla-16ba9922a/', img: LinkedIn, alt: 'LinkedIn' },
     { href: 'https://www.instagram.com/suyashshukla_/', img: Instagram, alt: 'Instagram' },
@@ -16,8 +16,8 @@ function ContactUS() {
   ]
 
   return (
-    <div className='bg-black min-h-screen w-full flex flex-col items-center justify-center p-10'>
-      <h1 className='text-8xl text-white uppercase font-extrabold mb-10'>Connect</h1>
+    <div ref={ref} className='bg-red-900 min-h-screen w-full flex flex-col items-center justify-center p-10'>
+      <h1 className='text-8xl text-black uppercase font-extrabold mb-10'>Connect</h1>
       <div className='flex flex-wrap items-center justify-center gap-10'>
         {socialLinks.map((link, index) => (
           <motion.button
@@ -25,7 +25,7 @@ function ContactUS() {
             onClick={() => window.open(link.href)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className='bg-gray-800 p-3 rounded-full shadow-lg'
+            className='bg-white p-3 rounded-full shadow-lg'
           >
             <img src={link.img} alt={link.alt} className='w-20 h-20'/>
           </motion.button>
@@ -33,6 +33,6 @@ function ContactUS() {
       </div>
     </div>
   )
-}
+})
 
 export default ContactUS
